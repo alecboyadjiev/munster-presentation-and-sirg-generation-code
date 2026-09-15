@@ -1,0 +1,115 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  every node/.style={align=center},
+  mainbox/.style={
+    draw,
+    rounded corners=7pt,
+    line width=0.8pt,
+    fill=gray!4,
+    font=\small\bfseries,
+    minimum width=3.25cm,
+    minimum height=0.95cm,
+    inner xsep=5pt,
+    inner ysep=4pt
+  },
+  auxbox/.style={
+    draw,
+    dashed,
+    dash pattern=on 5pt off 4pt,
+    line width=0.65pt,
+    font=\scriptsize,
+    minimum width=2.25cm,
+    minimum height=0.58cm,
+    inner xsep=4pt,
+    inner ysep=3pt
+  },
+  tinyaux/.style={
+    auxbox,
+    minimum width=1.55cm
+  },
+  solidaux/.style={
+    draw,
+    rounded corners=4pt,
+    line width=0.65pt,
+    font=\scriptsize,
+    minimum width=1.55cm,
+    minimum height=0.62cm,
+    inner xsep=4pt,
+    inner ysep=3pt
+  },
+  arrow/.style={-{Stealth[length=2.0mm,width=1.6mm]}, line width=0.65pt},
+  wire/.style={line width=0.65pt}
+]
+  % Central result chain.
+  \node[mainbox] (pre) at (0,0) {Pre-Framework};
+  \node[mainbox] (weak) at (0,-2.15) {Weak Convergence\\Theorem};
+  \node[mainbox] (local) at (0,-4.30) {Main Theorem};
+  \node[mainbox] (sirg) at (0,-6.45) {Model-Facing\\Corollary};
+  \node[mainbox] (poisson) at (-2.35,-8.75) {Poisson Limit SIRG\\Proposition};
+  \node[mainbox] (cox) at (2.35,-8.75) {Cox Limit SIRG\\Proposition};
+
+  \draw[arrow] (weak.south) -- (local.north);
+  \draw[arrow] (local.south) -- (sirg.north);
+  \draw[wire] (sirg.south) -- (0,-8.75);
+  \draw[arrow] (0,-8.75) -- (poisson.east);
+  \draw[arrow] (0,-8.75) -- (cox.west);
+
+  % Inputs to the pre-framework.
+  \node[auxbox] (hyper) at (-4.85,0) {Hypergraphs /\\Complexes};
+  \node[auxbox] (directed) at (-4.85,-1.5) {Directed Graphs};
+  \coordinate (preleftbus) at (-2.45,0);
+  \draw[wire] (hyper.east) -- (preleftbus);
+  \draw[wire] (directed.east) -- (-2.45,-1.5);
+  \draw[wire] (-2.45,-1.5) -- (preleftbus);
+  \draw[arrow] (preleftbus) -- (pre.west);
+
+  \node[auxbox] (marked) at (4.85,0) {Marked Graph Models};
+  \draw[arrow] (marked.west) -- (pre.east);
+
+  % Rooting variants feeding the weak-convergence theorem.
+  \node[auxbox, minimum width=2.35cm] (rootselect) at (3.55,-1.25) {Non-Uniform Root\\Selection};
+  \draw[arrow] (rootselect.south) |- (weak.east);
+
+  % Connection-model inputs to local weak convergence.
+  \node[auxbox, minimum width=2.55cm] (general) at (-4.45,-3.42) {General Connection\\Models};
+  \node[auxbox, minimum width=2.55cm] (dependent) at (-4.45,-5.15) {Generative / Configuration\\Models};
+  \coordinate (localbus) at (-4.45,-4.30);
+  \draw[wire] (general.south) -- (dependent.north);
+  \draw[arrow] (localbus) -- (local.west);
+
+  % SIRG model family and ambient-space examples.
+  \node[solidaux] (sirgmodels) at (-4.40,-6.45) {SIRG\\Models};
+  \draw[arrow] (sirgmodels.east) -- (sirg.west);
+
+  \node[tinyaux] (exotic) at (4.15,-4.75) {Exotic\\Spaces};
+  \node[tinyaux] (atomic) at (2.95,-5.70) {Atomic\\Spaces};
+  \node[tinyaux] (neyman) at (5.35,-5.70) {Neyman-\\Scott};
+  \node[tinyaux] (repulsive) at (2.95,-7.18) {Repulsive /\\Gibbs};
+  \coordinate (sirgspacebus) at (4.15,-6.45);
+  \draw[wire] (exotic.south) -- (sirgspacebus);
+  \draw[wire] (atomic.east) -- (4.15,-5.70);
+  \draw[wire] (neyman.south) |- (sirgspacebus);
+  \draw[wire] (sirgspacebus) |- (repulsive.east);
+  \draw[arrow] (sirgspacebus) -- (sirg.east);
+
+  % Inputs to the Poisson-limit proposition.
+  \node[solidaux] (countvariance) at (-5.95,-7.80) {Count\\Variance};
+  \node[solidaux] (padicmodels) at (-5.95,-9.70) {$p$-adic Models};
+  \coordinate (poissonbus) at (-4.78,-8.75);
+  \draw[wire] (-4.78,-7.80) -- (-4.78,-9.70);
+  \draw[wire] (countvariance.east) -- (-4.78,-7.80);
+  \draw[wire] (padicmodels.east) -- (-4.78,-9.70);
+  \draw[arrow] (poissonbus) -- (poisson.west);
+
+  % Inputs to the Cox-limit proposition.
+  \node[solidaux] (phaseshifted) at (5.95,-7.80) {Phase\\Shifted};
+  \node[tinyaux] (loggaussian) at (5.95,-8.75) {Log\\Gaussian};
+  \node[tinyaux] (shotnoise) at (5.95,-9.70) {Shot Noise};
+  \coordinate (coxbus) at (4.90,-8.75);
+  \draw[wire] (4.90,-7.80) -- (4.90,-9.70);
+  \draw[wire] (phaseshifted.west) -- (4.90,-7.80);
+  \draw[wire] (loggaussian.west) -- (4.90,-8.75);
+  \draw[wire] (shotnoise.west) -- (4.90,-9.70);
+  \draw[arrow] (coxbus) -- (cox.east);
+\end{tikzpicture}

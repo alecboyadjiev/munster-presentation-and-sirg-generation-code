@@ -1,0 +1,279 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{adjustbox}
+
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usetikzlibrary{
+    arrows.meta,
+    positioning,
+    calc,
+    shapes.geometric
+}
+
+\usepackage{twemojis}
+
+\title{Graphs as Adjacency Processes}
+
+\subtitle{A Point Process Framework for Local Limits of Random Graphs}
+
+\author{Alec Boyadjiev}
+
+\institute{
+University of Amsterdam (UvA)\\[0.5em]
+Based on bachelor thesis work at TU/e;\\
+Upcoming joint work with Pim van der Hoorn
+}
+
+\date{September 2026}
+
+\begin{document}
+
+% --------------------------------------------------
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{Background - Spatial Random Graphs in $\mathbb{R}^d$}
+
+\begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+        \centering
+        \begin{uncoverenv}<1->
+        \textbf{Random Geometric Graph}\par
+        \vspace{0.12cm}
+        \resizebox{0.82\linewidth}{!}{\input{figures/rgg-new}}
+        \par\vspace{0.12cm}
+        \(
+            \displaystyle
+            \mathbb{P}(E_{x,y})
+            = \mathbf{1}\!\left\{\lVert x-y\rVert \leq \rho\right\}
+        \)
+        \end{uncoverenv}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+        \centering
+        \begin{uncoverenv}<2->
+        \textbf{SIRG/GIRG}\par
+        \vspace{0.12cm}
+        \resizebox{0.82\linewidth}{!}{\input{figures/sirg-new}}
+        \par\vspace{0.12cm}
+        \(
+            \displaystyle
+            \mathbb{P}(E_{x,y})
+            = \kappa\!\left(\lVert x-y\rVert,w_x,w_y\right)
+        \)
+        \end{uncoverenv}
+    \end{column}
+\end{columns}
+
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{Motivation}
+
+\begin{itemize}
+    \item \textit{Local weak convergence} asks to find $(G_\infty, p_\infty)$ for which $(G_n, U_n) \Rightarrow (G_\infty, p_\infty)$
+    \item A graph $G$ on vertices in $\mathbb{R}^d$ can be represented as a point process in $\mathbb{R}^{2d}$
+\end{itemize}
+
+\vspace{0.08cm}
+\centering
+\begin{tikzpicture}[
+    font=\scriptsize,
+    vertex/.style={circle,draw=black,fill=black,minimum size=2.4mm,inner sep=0pt},
+    root/.style={vertex,draw=red!75!black,fill=white,line width=0.9pt},
+    atom/.style={circle,fill=blue!65!black,inner sep=1.7pt},
+    root atom/.style={circle,draw=red!75!black,very thick,fill=white,inner sep=2.2pt},
+    atom label/.style={anchor=south west,xshift=2pt,yshift=2pt,scale=0.80}
+]
+    % Rooted graph with real-valued vertex labels.
+    \node[font=\footnotesize\bfseries] at (1.65,2.90) {Rooted Labelled Graph $(G,p)$};
+
+    \node[vertex] (a) at (0.20,1.85) {};
+    \node[root]   (r) at (1.55,1.45) {};
+    \node[vertex] (b) at (0.70,0.25) {};
+    \node[vertex] (c) at (3.15,1.15) {};
+    \node[anchor=south east] at ($(a)+(-0.12,0.12)$) {$-1.2$};
+    \node[anchor=south west,text=red!75!black] at ($(r)+(0.12,0.12)$) {$0$};
+    \node[anchor=north west] at ($(b)+(0.12,-0.12)$) {$0.8$};
+    \node[anchor=south west] at ($(c)+(0.12,0.12)$) {$1.7$};
+
+    \draw[blue!70!black,thick] (r) --
+        node[pos=0.52,above=3pt,fill=white,inner sep=0.8pt,text=blue!70!black] {$e_1$} (a);
+    \draw[teal!75!black,thick] (r) --
+        node[pos=0.43,left=3pt,fill=white,inner sep=0.8pt,text=teal!75!black] {$e_2$} (b);
+    \draw[orange!85!black,thick] (r) --
+        node[pos=0.55,above=3pt,fill=white,inner sep=0.8pt,text=orange!85!black] {$e_3$} (c);
+
+    \draw[<->,>=Stealth,thick,black!45] (3.95,1.35) -- (5.40,1.35);
+
+    % Symmetric adjacency measure: diagonal atoms encode vertices and
+    % reflected off-diagonal pairs encode undirected edges.
+    \begin{scope}[shift={(8.10,0.15)},x=1.18cm,y=0.82cm]
+        \node[font=\footnotesize\bfseries] at (0.25,3.34) {Symmetric Adjacency Measure $(\xi, p)$};
+
+        \draw[->,black!65] (-1.55,-1.45) -- (2.18,-1.45) node[right] {$\mathbb{R}$};
+        \draw[->,black!65] (-1.55,-1.45) -- (-1.55,2.18) node[above] {$\mathbb{R}$};
+        \draw[dashed,black!22] (-1.45,-1.45) -- (2.05,2.05);
+
+        \foreach \t/\lab in {-1.2/{-1.2},0/0,0.8/{0.8},1.7/{1.7}} {
+            \draw[black!45] (\t,-1.50) -- (\t,-1.40) node[below,scale=0.78] {$\lab$};
+            \draw[black!45] (-1.60,\t) -- (-1.50,\t) node[left,scale=0.78] {$\lab$};
+        }
+
+        \foreach \t in {-1.2,0.8,1.7} \node[atom] at (\t,\t) {};
+        \node[root atom] at (0,0) {};
+        \node[atom label,text=red!75!black] at (0,0) {root};
+
+        \foreach \x/\y in {-1.2/0,0/-1.2}
+            \node[circle,fill=blue!70!black,inner sep=1.7pt] at (\x,\y) {};
+        \foreach \x/\y in {0/0.8,0.8/0}
+            \node[circle,fill=teal!75!black,inner sep=1.7pt] at (\x,\y) {};
+        \foreach \x/\y in {0/1.7,1.7/0}
+            \node[circle,fill=orange!85!black,inner sep=1.7pt] at (\x,\y) {};
+
+        \node[atom label,text=blue!70!black] at (-1.2,0) {$e_1$};
+        \node[atom label,text=blue!70!black] at (0,-1.2) {$e_1$};
+        \node[atom label,text=teal!75!black] at (0,0.8) {$e_2$};
+        \node[atom label,text=teal!75!black] at (0.8,0) {$e_2$};
+        \node[atom label,text=orange!85!black] at (0,1.7) {$e_3$};
+        \node[atom label,text=orange!85!black] at (1.7,0) {$e_3$};
+    \end{scope}
+\end{tikzpicture}
+
+\begin{itemize}
+    \item Palm theory gives a notion of "typical point" for point processes. Can this be associated with a uniform graph root for local weak convergence? 
+\end{itemize}
+
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{The Main Theorem}
+Consider a sequence of finite stationary adjacency processes $(\xi_n)_{n \in \mathbb{N}}$, placed along a $\text{nice}^*$ compact exhaustion of a proper metric space $\mathbb{X}^2$. Suppose that
+\begin{enumerate}
+    \item $\xi_n^{(o,o)} \Rightarrow \xi_\infty$ ($\xi_\infty$ will then also have a point at $(o,o)$ almost surely);
+    \item The vertices concentrate via 
+    $$\frac{|V(\xi_n)|}{\mathbb{E}|V(\xi_n)|}\overset{L^1}{\longrightarrow} 1;$$
+    \item $(\xi_n^{(o,o)}, o)_{n \in \mathbb{N}}$ is \textit{radially} $\textit{tight}^*$ (vertices reachable from $o$ contained in a compact subset of $\mathbb{X}$ with high probability).
+\end{enumerate}
+Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightarrow G(\xi_\infty, o),$$ and $\xi_\infty$ acts as a nice, sampleable representation of the local weak limit. 
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{The Model-Facing Corollary}
+Consider a sequence of finite stationary \textit{vertex} processes $(\Gamma_n)_{n \in \mathbb{N}}$, placed along a $\text{nice}^*$ compact exhaustion of a proper metric space $\mathbb{X}$, and let $C$ be a $\text{nice}^*$, continous-ish, isometric connection rule (measurable SIRG kernel). Suppose that
+\begin{enumerate}
+    \item $\Gamma_n^{o} \Rightarrow \Gamma_\infty$; 
+    \item The vertices concentrate via 
+    $$\frac{|\Gamma_n|}{\mathbb{E}|\Gamma_n|}\overset{L^1}{\longrightarrow} 1;$$
+    \item $(\xi_n, o)_{n \in \mathbb{N}} \sim C(\Gamma_n^{o}, \cdot)$ is \textit{radially} $\textit{tight}^*$ (usually suffices that $\mathbb{P}(E_{xy})\propto t^{-\alpha}$ against $t = d_\mathbb{X}(x,y)$).
+\end{enumerate}
+Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightarrow G(\xi_\infty, o),$$ where $\xi_\infty \sim C(\Gamma_\infty, \cdot)$. 
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{The Classical Case - Binomial in $\mathbb{R}^d$}
+\begin{columns}[T,onlytextwidth]
+    \begin{column}{0.52\textwidth}
+        \begin{itemize}
+            \item $\Gamma_n = \sum_{i=1}^{n}\delta_{U_i}$ with
+            $U_i \overset{\mathrm{i.i.d.}}{\sim} \operatorname{Unif}(\mathbb{T}^d_n)$
+            \item $C$ is a SIRG rule with
+            $\mathbb{P}(E_{xy}) \propto t^{-\alpha}$, where $\alpha>d$
+        \end{itemize}
+
+        \vspace{0.35cm}
+        \[
+            G(\xi_n,U_n) \Rightarrow G(\xi_\infty,0)
+        \]
+    \end{column}
+    \begin{column}{0.44\textwidth}
+        \centering
+        \resizebox{0.88\linewidth}{!}{\input{figures/poisson-sirg-rooted}}
+        \par\vspace{0.12cm}
+        \textbf{Poisson SIRG limit}
+        \par\vspace{0.06cm}
+        $\Gamma_\infty^0 \overset{d}{=} \operatorname{PPP}(1)+\delta_0$
+    \end{column}
+\end{columns}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{Novel Results - More Vertex Processes}
+\begin{columns}[T,onlytextwidth]
+    \begin{column}{0.50\textwidth}
+        Sticking with $\mathbb{R}^d$ and $\mathbb{T}^d_n$ for now, we can handle:
+        \begin{itemize}
+            \item Mixed-Binomial vertex processes $\sum_{n=0}^N \delta_{U_i}$
+            \item Cox vertex processes (Phase-Shifted, \textcolor{red}{Shot-Noise, Lévy})
+            \item \textcolor{red}{Neyman-Scott / Clustering}
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+        \centering
+        \resizebox{\linewidth}{!}{\input{figures/cox-example}}
+        \par\vspace{0.12cm}
+        \textbf{Soft RGG with Cox vertices}
+    \end{column}
+\end{columns}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{Novel Results - Non-Euclidian Spaces}
+\begin{columns}[T,onlytextwidth]
+    \begin{column}{0.50\textwidth}
+        We can also handle the following approximating regimes:
+        \begin{itemize}
+            \item $B_{\mathbb{Q}}(0,p^n) \to \mathbb{Q}^d_p$
+            \item \textcolor{red}{Proper metric spaces that admit homogeneous quotient spaces}
+            \item $\mathbb{H}^d$? Not yet... no homogeneous quotient spaces
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+        \centering
+        \resizebox{\linewidth}{!}{\input{figures/padic_sirg-example}}
+        \par\vspace{0.12cm}
+        \textbf{SIRG in $\mathbb{Q}_3$}
+    \end{column}
+\end{columns}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{How YOU Can Benefit \texttwemoji{1faf5}}
+    \centering
+
+    \begin{adjustbox}{
+        max size={\textwidth}{0.78\textheight},
+        center
+    }
+        \input{elements/discussion-results-map}
+    \end{adjustbox}
+
+    \vspace{0.3em}
+    {\tiny
+    Overview of the main convergence results and model families feeding into them.
+    Dashed borders indicate topics not directly explored in this paper.
+    }
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{Next Steps}
+\begin{itemize}
+    \item Preprint/Paper in the works with Pim van der Hoorn
+    \item Directed graphs will be included in this revised framework
+    \item Hyperbolic SIRGs, eventually... 
+    \item Formalize conditions for more vertex processes (Cox, Neyman-Scott, ...)
+\end{itemize}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{Scan Me (Thesis, Related Notes, Copy of Presentation)}
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg}
+\end{frame}
+
+\end{document}
+
+
