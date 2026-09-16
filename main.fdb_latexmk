@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1789494321.93762 "c:/Users/alecb/Documents/Projects/Munster Talk/main.tex" "main.pdf" "main" 1789494330.83112 0
+["pdflatex"] 1789505215.94485 "c:/Users/alecb/Documents/Projects/Munster Talk/main.tex" "main.pdf" "main" 1789505226.40166 0
   "C:/Users/alecb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1789486210 81088 29d6fa367ac022d1b69251d68c0742e6 ""
   "C:/Users/alecb/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1788005811 13333487 b373a99779de8037948e933452e7edd7 ""
   "C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -239,7 +239,7 @@
   "C:/Users/alecb/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/alecb/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/alecb/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/alecb/Documents/Projects/Munster Talk/main.tex" 1789494321 11253 f6f88a78f5df1e03ae0e275febed1f2f ""
+  "c:/Users/alecb/Documents/Projects/Munster Talk/main.tex" 1789505215 11261 316c4df3b5545aa2218d4d1cbc7b7623 ""
   "elements/discussion-results-map.tex" 1789488048 4230 5300af46ca304ed3de5bab7aba757998 ""
   "figures/cox-example.tex" 1789404706 59522 054f893801aa326edffc4bb65a614555 ""
   "figures/padic_sirg-example.tex" 1789167219 114054 bc4ce159bb9de1abc0db24a1b54f5327 ""
@@ -247,10 +247,10 @@
   "figures/rgg-new.tex" 1789164615 119434 c04a53de6a20ebb07d39fe5f8efb51e7 ""
   "figures/sirg-new.tex" 1789164748 124424 c992a96024772901007d96a2bb5085e8 ""
   "images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg" 1789486918 155712 5ee9a6f45e365b7988d500e1cbf9c670 ""
-  "main.aux" 1789494330 1892 8793119d6c15ebedffb494c48bc9f417 "pdflatex"
-  "main.nav" 1789494330 1206 3fc17597cc3923c0bed034330402cd16 "pdflatex"
-  "main.out" 1789494323 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1789494321 11253 f6f88a78f5df1e03ae0e275febed1f2f ""
+  "main.aux" 1789505226 1892 8793119d6c15ebedffb494c48bc9f417 "pdflatex"
+  "main.nav" 1789505226 1206 3fc17597cc3923c0bed034330402cd16 "pdflatex"
+  "main.out" 1789505217 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1789505215 11261 316c4df3b5545aa2218d4d1cbc7b7623 ""
   (generated)
   "main.aux"
   "main.log"
