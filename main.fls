@@ -1,6 +1,6 @@
-PWD c:\Users\alecb\Documents\Projects\Munster Talk
+PWD c:\Users\alecb\Documents\GitHub\munster-presentation-and-sirg-generation-code
 INPUT C:\Users\alecb\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\alecb\Documents\Projects\Munster Talk\main.tex
+INPUT c:\Users\alecb\Documents\GitHub\munster-presentation-and-sirg-generation-code\main.tex
 OUTPUT main.log
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamer.cls
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamer.cls
@@ -388,11 +388,6 @@ INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss8.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss8.tfm
 INPUT C:\Users\alecb\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
-INPUT .\figures\rgg-new.tex
-INPUT .\figures\rgg-new.tex
-INPUT .\figures\rgg-new.tex
-INPUT .\figures\rgg-new.tex
-INPUT figures\rgg-new.tex
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
@@ -420,6 +415,11 @@ INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\tex\latex\sansmathaccent\ot1m
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\sansmathaccent\mathkerncmssi10.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\sansmathaccent\mathkerncmssi8.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\sansmathaccent\mathkerncmssi8.tfm
+INPUT .\figures\rgg-new.tex
+INPUT .\figures\rgg-new.tex
+INPUT .\figures\rgg-new.tex
+INPUT .\figures\rgg-new.tex
+INPUT figures\rgg-new.tex
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT .\figures\sirg-new.tex
@@ -470,8 +470,6 @@ INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\sansmathaccent\mathkerncmssi9.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\sansmathaccent\mathkerncmssi8.tfm
-INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssi8.tfm
-INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssi8.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT .\figures\poisson-sirg-rooted.tex
@@ -480,6 +478,8 @@ INPUT .\figures\poisson-sirg-rooted.tex
 INPUT .\figures\poisson-sirg-rooted.tex
 INPUT figures\poisson-sirg-rooted.tex
 INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssi8.tfm
+INPUT C:\Users\alecb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssi8.tfm
 INPUT .\figures\cox-example.tex
 INPUT .\figures\cox-example.tex
 INPUT .\figures\cox-example.tex

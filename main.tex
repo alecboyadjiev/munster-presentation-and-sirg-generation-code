@@ -35,6 +35,34 @@ Upcoming joint work with Pim van der Hoorn
 \end{frame}
 
 % --------------------------------------------------
+\begin{frame}{Motivation}
+
+Random graph limits are \textbf{hard}.
+
+\vspace{0.4em}
+
+Point process limits are \textbf{easy} (relatively).
+
+\vspace{1em}
+
+\begin{enumerate}
+    \item Associate every spatial random graph $G$ with a point process $\xi$;
+
+    \vspace{0.3em}
+
+    \item Under reasonable conditions, lift point process convergence
+    \[
+        \xi_n \Rightarrow \xi_\infty
+    \]
+    to a meaningful type of local graph convergence
+    \[
+        G(\xi_n) \Rightarrow G(\xi_\infty).
+    \]
+\end{enumerate}
+
+\end{frame}
+
+% ----------------------------------------------------
 \begin{frame}{Background - Spatial Random Graphs in $\mathbb{R}^d$}
 
 \begin{columns}[T,onlytextwidth]
@@ -71,11 +99,60 @@ Upcoming joint work with Pim van der Hoorn
 \end{frame}
 
 % --------------------------------------------------
-\begin{frame}{Motivation}
+\begin{frame}{Local Weak Convergence}
+
+Fix some finite rooted test graph $H$, such as
+
+\vspace{0.4em}
+
+\begin{center}
+\begin{tikzpicture}[
+    vertex/.style={circle, fill=black, inner sep=1.8pt},
+    root/.style={circle, draw=black, fill=white, inner sep=2.6pt, line width=0.8pt}
+]
+    \node[root]   (o) at (0,0) {};
+    \node[vertex] (a) at (-0.9,0.7) {};
+    \node[vertex] (b) at (0.9,0.7) {};
+    \node[vertex] (c) at (-0.9,-0.7) {};
+    \node[vertex] (d) at (0.9,-0.7) {};
+
+    \draw (o) -- (a);
+    \draw (o) -- (b);
+    \draw (o) -- (c);
+    \draw (b) -- (d);
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3em}
+
+and some radius $r$, for example $r = 2$. Then check that the probability that the
+$r$-neighborhood of a uniformly chosen root is isomorphic to $H$
+converges:
+
+\vspace{0.6em}
+
+\[
+\begin{array}{c@{\qquad}ccccc}
+& (G_1,U_1) & (G_2,U_2) & (G_3,U_3) & \Longrightarrow & (G_\infty,p_\infty) \\[0.5em]
+\mathbb{P}\!\left(B_2(G_n,p_n)\cong H\right)
+& \frac14 & \frac38 & \frac{7}{16} & \longrightarrow & \frac12
+\end{array}
+\]
+
+\vspace{0.7em}
+
+If this holds for every finite rooted graph $H$ and radius $r$, then
+\[
+    (G_n,U_n) \Rightarrow (G_\infty,p_\infty).
+\]
+
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{The Setup}
 
 \begin{itemize}
-    \item \textit{Local weak convergence} asks to find $(G_\infty, p_\infty)$ for which $(G_n, U_n) \Rightarrow (G_\infty, p_\infty)$
-    \item A graph $G$ on vertices in $\mathbb{R}^d$ can be represented as a point process in $\mathbb{R}^{2d}$
+    \item Represent a random graph $G$ on vertices in $\mathbb{R}^d$ as an \textit{adjacency process} in $\mathbb{R}^{2d}$
 \end{itemize}
 
 \vspace{0.08cm}
@@ -144,50 +221,67 @@ Upcoming joint work with Pim van der Hoorn
 \end{tikzpicture}
 
 \begin{itemize}
-    \item Palm theory gives a notion of "typical point" for point processes. Can this be associated with a uniform graph root for local weak convergence? 
+    \item Can convergence of these point processes $\xi_n \Rightarrow \xi_\infty$ be lifted to local weak convergence of the corresponding graphs $G(\xi_n, U_n) \Rightarrow (G_\infty, p_\infty)$?  
 \end{itemize}
 
 \end{frame}
 
 % --------------------------------------------------
-\begin{frame}{The Main Theorem}
-Consider a sequence of finite stationary adjacency processes $(\xi_n)_{n \in \mathbb{N}}$, placed along a $\text{nice}^*$ compact exhaustion of a proper metric space $\mathbb{X}^2$. Suppose that
-\begin{enumerate}
-    \item $\xi_n^{(o,o)} \Rightarrow \xi_\infty$ ($\xi_\infty$ will then also have a point at $(o,o)$ almost surely);
-    \item The vertices concentrate via 
-    $$\frac{|V(\xi_n)|}{\mathbb{E}|V(\xi_n)|}\overset{L^1}{\longrightarrow} 1;$$
-    \item $(\xi_n^{(o,o)}, o)_{n \in \mathbb{N}}$ is \textit{radially} $\textit{tight}^*$ (vertices reachable from $o$ contained in a compact subset of $\mathbb{X}$ with high probability).
-\end{enumerate}
-Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightarrow G(\xi_\infty, o),$$ and $\xi_\infty$ acts as a nice, sampleable representation of the local weak limit. 
-\end{frame}
+\begin{frame}{Constructing Adjacency Processes}
+Recall SIRGs:
+\begin{itemize}
+    \item Constructed from a \textit{collection of vertices} in proper metric space $\mathbb{X}$;
+    \item Each pair connected with an isometric connection rule $\kappa(d_\mathbb{X}(x,y), w_x, w_y)$. 
+\end{itemize}
 
-% --------------------------------------------------
-\begin{frame}{The Model-Facing Corollary}
-Consider a sequence of finite stationary \textit{vertex} processes $(\Gamma_n)_{n \in \mathbb{N}}$, placed along a $\text{nice}^*$ compact exhaustion of a proper metric space $\mathbb{X}$, and let $C$ be a $\text{nice}^*$, continous-ish, isometric connection rule (measurable SIRG kernel). Suppose that
-\begin{enumerate}
-    \item $\Gamma_n^{o} \Rightarrow \Gamma_\infty$; 
-    \item The vertices concentrate via 
-    $$\frac{|\Gamma_n|}{\mathbb{E}|\Gamma_n|}\overset{L^1}{\longrightarrow} 1;$$
-    \item $(\xi_n, o)_{n \in \mathbb{N}} \sim C(\Gamma_n^{o}, \cdot)$ is \textit{radially} $\textit{tight}^*$ (usually suffices that $\mathbb{P}(E_{xy})\propto t^{-\alpha}$ against $t = d_\mathbb{X}(x,y)$).
-\end{enumerate}
-Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightarrow G(\xi_\infty, o),$$ where $\xi_\infty \sim C(\Gamma_\infty, \cdot)$. 
+\pause 
+
+\vspace{0.4em}
+
+To make our adjacency process $\xi$ represent a SIRG:
+\begin{itemize}
+    \item Formalize this collection of vertices as a point process $\Gamma$ on $\mathbb{X}$;
+    \item Turn $\kappa$ into a measurable kernel $C$ mapping to point processes on $\mathbb{X}^2$;
+    \item Then $\xi \sim C(\Gamma)$ is the adjacency process.
+\end{itemize}
+
+\pause
+
+\vspace{0.4em}
+
+If this $C$ is nice* and continuous-ish*, we can leverage 
+$$
+    \Gamma_n \Rightarrow \Gamma_\infty \qquad \Longrightarrow \qquad \xi_n \Rightarrow \xi_\infty
+$$
+where $\xi_n \sim C(\Gamma_n), \xi_\infty \sim C(\Gamma_\infty)$
+
 \end{frame}
 
 % --------------------------------------------------
 \begin{frame}{The Classical Case - Binomial in $\mathbb{R}^d$}
 \begin{columns}[T,onlytextwidth]
     \begin{column}{0.52\textwidth}
-        \begin{itemize}
-            \item $\Gamma_n = \sum_{i=1}^{n}\delta_{U_i}$ with
-            $U_i \overset{\mathrm{i.i.d.}}{\sim} \operatorname{Unif}(\mathbb{T}^d_n)$
-            \item $C$ is a SIRG rule with
-            $\mathbb{P}(E_{xy}) \propto t^{-\alpha}$, where $\alpha>d$
-        \end{itemize}
 
+        If
+        \begin{itemize}
+            \item $\Gamma_n = \sum_{i=1}^{n}\delta_{X_i}$ with
+            $X_i \overset{\mathrm{i.i.d.}}{\sim} \operatorname{Unif}(\mathbb{T}^d_n)$,
+            \item $C$ uses a SIRG rule $\kappa\!\left(\lVert x-y\rVert,w_x,w_y\right)$,
+            \item $\kappa(t, \cdot, \cdot) \propto t^{-\alpha}$, where $\alpha>d$,
+        \end{itemize}
+        then
+        $$
+            G(\xi_n,U_n) \Rightarrow G(\xi_\infty,0),
+        $$
+        where $\xi_n \sim C(\Gamma_n)$, $\xi_\infty \sim C(\Gamma_\infty)$.
+    
         \vspace{0.35cm}
-        \[
-            G(\xi_n,U_n) \Rightarrow G(\xi_\infty,0)
-        \]
+
+        \textcolor{red}{Note also that $\Gamma^0_n \Rightarrow \Gamma_\infty...$}
+        
+        \vspace{0.35cm}
+
+        Seems like Palm distribution $\sim$ uniform root choice.
     \end{column}
     \begin{column}{0.44\textwidth}
         \centering
@@ -195,9 +289,21 @@ Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightar
         \par\vspace{0.12cm}
         \textbf{Poisson SIRG limit}
         \par\vspace{0.06cm}
-        $\Gamma_\infty^0 \overset{d}{=} \operatorname{PPP}(1)+\delta_0$
+        $\Gamma_\infty \overset{d}{=} \operatorname{PPP}(1)+\delta_0$
     \end{column}
 \end{columns}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}{The Main Theorem}
+Consider a sequence of finite stationary \textit{vertex} processes $(\Gamma_n)_{n \in \mathbb{N}}$, placed along a $\text{nice}^*$ compact exhaustion of a proper metric space $\mathbb{X}$, and let $C$ be a $\text{nice}^*$, continous-ish, isometric connection rule (measurable SIRG kernel). Suppose that
+\begin{enumerate}
+    \item $\Gamma_n^{o} \Rightarrow \Gamma_\infty$; 
+    \item The vertices concentrate via 
+    $$\frac{|\Gamma_n|}{\mathbb{E}|\Gamma_n|}\overset{L^1}{\longrightarrow} 1;$$
+    \item $(\xi_n, o)_{n \in \mathbb{N}} \sim C(\Gamma_n^{o}, \cdot)$ is \textit{radially} $\textit{tight}^*$.
+\end{enumerate}
+Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightarrow G(\xi_\infty, o),$$ where $\xi_\infty \sim C(\Gamma_\infty, \cdot)$. 
 \end{frame}
 
 % --------------------------------------------------
@@ -262,9 +368,9 @@ Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightar
 \begin{frame}{Next Steps}
 \begin{itemize}
     \item Preprint/Paper in the works with Pim van der Hoorn
-    \item Directed graphs will be included in this revised framework
-    \item Hyperbolic SIRGs, eventually... 
+    \item Directed graphs may be included in this revised framework
     \item Formalize conditions for more vertex processes (Cox, Neyman-Scott, ...)
+    \item Hyperbolic SIRGs, eventually... 
 \end{itemize}
 \end{frame}
 
