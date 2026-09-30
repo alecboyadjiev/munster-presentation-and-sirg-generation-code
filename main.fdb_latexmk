@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790792467.23989 "c:/Users/alecb/Documents/GitHub/munster-presentation-and-sirg-generation-code/main.tex" "main.pdf" "main" 1790792485.60444 0
+["pdflatex"] 1790792862.51718 "c:/Users/alecb/Documents/GitHub/munster-presentation-and-sirg-generation-code/main.tex" "main.pdf" "main" 1790792881.95185 0
   "C:/Users/alecb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1789651682 81088 29d6fa367ac022d1b69251d68c0742e6 ""
   "C:/Users/alecb/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1788005811 13333487 b373a99779de8037948e933452e7edd7 ""
   "C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -239,18 +239,18 @@
   "C:/Users/alecb/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/alecb/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/alecb/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/alecb/Documents/GitHub/munster-presentation-and-sirg-generation-code/main.tex" 1790792466 12849 2508e0b9ef51e07f9e97222036b5c783 ""
-  "elements/discussion-results-map.tex" 1790615932 4224 94e5614535c2a281430137d9fda83476 ""
+  "c:/Users/alecb/Documents/GitHub/munster-presentation-and-sirg-generation-code/main.tex" 1790792847 13894 16497c80bc97b81cb21d8be17563cc6a ""
+  "elements/discussion-results-map.tex" 1790792586 4339 94e5614535c2a281430137d9fda83476 ""
   "figures/cox-example.tex" 1789404706 59522 054f893801aa326edffc4bb65a614555 ""
   "figures/padic_sirg-example.tex" 1789167219 114054 bc4ce159bb9de1abc0db24a1b54f5327 ""
   "figures/poisson-sirg-rooted.tex" 1789493061 25021 04cdfaab2a821648713fc5b518d2461f ""
   "figures/rgg-new.tex" 1789164615 119434 c04a53de6a20ebb07d39fe5f8efb51e7 ""
   "figures/sirg-new.tex" 1789164748 124424 c992a96024772901007d96a2bb5085e8 ""
   "images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg" 1789486918 155712 5ee9a6f45e365b7988d500e1cbf9c670 ""
-  "main.aux" 1790792485 2158 847ebdb8a24fa34c3fd92bbff29a241a "pdflatex"
-  "main.nav" 1790792485 1400 dee68d5d86327862ce7fce7d1ee4d131 "pdflatex"
-  "main.out" 1790792469 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1790792466 12849 2508e0b9ef51e07f9e97222036b5c783 ""
+  "main.aux" 1790792881 2287 395fb5aa0b06f72fa0bfdbae764c0009 "pdflatex"
+  "main.nav" 1790792881 1493 90da5043617c0040816faabadfe6a06d "pdflatex"
+  "main.out" 1790792864 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1790792847 13894 16497c80bc97b81cb21d8be17563cc6a ""
   (generated)
   "main.aux"
   "main.log"

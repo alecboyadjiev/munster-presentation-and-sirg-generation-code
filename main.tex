@@ -284,6 +284,7 @@ Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightar
             \item Mixed-Binomial vertex processes $\sum_{n=0}^N \delta_{U_i}$
             \item Cox vertex processes (Phase-Shifted, \textcolor{red}{Shot-Noise, Lévy})
             \item \textcolor{red}{Neyman-Scott / Clustering}
+            \item \textcolor{red}{Bernoulli Site processes (for atomic spaces)}
         \end{itemize}
     \end{column}
     \begin{column}{0.46\textwidth}
@@ -302,7 +303,7 @@ Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightar
         We can also handle the following approximating regimes:
         \begin{itemize}
             \item $B_{\mathbb{Q}}(0,p^n) \to \mathbb{Q}^d_p$
-            \item \textcolor{red}{Proper metric spaces that admit homogeneous quotient spaces}
+            \item \textcolor{red}{Proper metric spaces that admit homogeneous quotient spaces, incl. infinite trees, graphs, and non-archimedian fields}
             \item $\mathbb{H}^d$? Not yet... no homogeneous quotient spaces
         \end{itemize}
     \end{column}
@@ -347,6 +348,17 @@ Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightar
 \begin{frame}{Scan Me (Thesis, Related Notes, Notes on Presentation Slides)}
     \centering
     \includegraphics[width=0.45\textwidth]{images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg}
+\end{frame}
+
+\begin{frame}{The Pre-Main Theorem}
+Consider a sequence of finite stationary adjacency processes $(\xi_n)_{n \in \mathbb{N}}$, placed along a $\text{nice}^*$ compact exhaustion of a proper metric space $\mathbb{X}^2$. Suppose that
+\begin{enumerate}
+    \item $\xi_n^{(o,o)} \Rightarrow \xi_\infty$ ($\xi_\infty$ will then also have a point at $(o,o)$ almost surely);
+    \item The vertices concentrate via 
+    $$\frac{|V(\xi_n)|}{\mathbb{E}|V(\xi_n)|}\overset{L^1}{\longrightarrow} 1;$$
+    \item $(\xi_n^{(o,o)}, o)_{n \in \mathbb{N}}$ is \textit{radially} $\textit{tight}^*$ (vertices reachable from $o$ contained in a compact subset of $\mathbb{X}$ with high probability).
+\end{enumerate}
+Then, the corresponding graphs converge locally weakly, $$G(\xi_n, U_n) \Rightarrow G(\xi_\infty, o),$$ and $\xi_\infty$ acts as a nice, sampleable representation of the local weak limit. 
 \end{frame}
 
 \end{document}
