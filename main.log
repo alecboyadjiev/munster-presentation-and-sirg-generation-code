@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.8.29)  28 SEP 2026 22:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.8.29)  30 SEP 2026 20:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -829,9 +829,9 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
 
 ]
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 227.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 196.
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 227.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 196.
  [6
 
 ] [7
@@ -852,7 +852,7 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
 <all-twemojis.pdf, id=360, page=3446, 27.10126pt x 27.10126pt>
 File: all-twemojis.pdf Graphic file (type pdf)
 <use all-twemojis.pdf, page 3446>
-Package pdftex.def Info: all-twemojis.pdf , page3446 used on input line 365.
+Package pdftex.def Info: all-twemojis.pdf , page3446 used on input line 334.
 (pdftex.def)             Requested size: 10.99992pt x 11.00003pt.
  [14
 
@@ -862,7 +862,7 @@ Package pdftex.def Info: all-twemojis.pdf , page3446 used on input line 365.
 <images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg, id=411, 2007.5pt x 2007.5pt>
 File: images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg Graphic file (type jpg)
 <use images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg>
-Package pdftex.def Info: images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg  used on input line 381.
+Package pdftex.def Info: images/qrcode_400551511_83d8c8bd3467c58f9942d53733380a9b.jpg  used on input line 350.
 (pdftex.def)             Requested size: 179.25114pt x 179.2275pt.
  [16
 
@@ -885,15 +885,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41338 strings out of 467871
- 875681 string characters out of 5418376
+ 41318 strings out of 467871
+ 875373 string characters out of 5418376
  2942800 words of memory out of 5000000
- 69612 multiletter control sequences out of 15000+600000
+ 69592 multiletter control sequences out of 15000+600000
  646176 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,14n,123p,2504b,1027s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/alecb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (16 pages, 808640 bytes).
+Output written on main.pdf (16 pages, 809046 bytes).
 PDF statistics:
  516 PDF objects out of 1000 (max. 8388607)
  33 named destinations out of 1000 (max. 500000)

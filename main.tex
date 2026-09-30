@@ -101,50 +101,19 @@ Point process limits are \textbf{easy} (relatively).
 % --------------------------------------------------
 \begin{frame}{Local Weak Convergence}
 
-Fix some finite rooted test graph $H$, such as
+Recall from yesterday, "local" convergence of rooted graphs $(G_n, p_n) \to (G_\infty, p_\infty)$. For all $r \in \mathbb{N}$, there exists some $N \in \mathbb{N}$, such that 
+$$ 
+B_r(G_n, p_n) \cong B_r(G_\infty, p_n), \qquad \forall n \geq N.
+$$
+This convergence defines the Benjamini-Schramm topology $\mathcal{G}^*$ on locally finite undirected rooted simple graphs. \textit{Weak convergence} in this topology is then
+$$
+(G_n, p_n) \Rightarrow (G_\infty, p_\infty).
+$$
+We call it \textit{local weak convergence} when $G_n$ are a.s. finite and the root is uniform, denoted
+$$
+(G_n, U_n) \Rightarrow (G_\infty, p_\infty)
+$$
 
-\vspace{0.4em}
-
-\begin{center}
-\begin{tikzpicture}[
-    vertex/.style={circle, fill=black, inner sep=1.8pt},
-    root/.style={circle, draw=black, fill=white, inner sep=2.6pt, line width=0.8pt}
-]
-    \node[root]   (o) at (0,0) {};
-    \node[vertex] (a) at (-0.9,0.7) {};
-    \node[vertex] (b) at (0.9,0.7) {};
-    \node[vertex] (c) at (-0.9,-0.7) {};
-    \node[vertex] (d) at (0.9,-0.7) {};
-
-    \draw (o) -- (a);
-    \draw (o) -- (b);
-    \draw (o) -- (c);
-    \draw (b) -- (d);
-\end{tikzpicture}
-\end{center}
-
-\vspace{0.3em}
-
-and some radius $r$, for example $r = 2$. Then check that the probability that the
-$r$-neighborhood of a uniformly chosen root is isomorphic to $H$
-converges:
-
-\vspace{0.6em}
-
-\[
-\begin{array}{c@{\qquad}ccccc}
-& (G_1,U_1) & (G_2,U_2) & (G_3,U_3) & \Longrightarrow & (G_\infty,p_\infty) \\[0.5em]
-\mathbb{P}\!\left(B_2(G_n,p_n)\cong H\right)
-& \frac14 & \frac38 & \frac{7}{16} & \longrightarrow & \frac12
-\end{array}
-\]
-
-\vspace{0.7em}
-
-If this holds for every finite rooted graph $H$ and radius $r$, then
-\[
-    (G_n,U_n) \Rightarrow (G_\infty,p_\infty).
-\]
 
 \end{frame}
 
@@ -166,7 +135,7 @@ If this holds for every finite rooted graph $H$ and radius $r$, then
     atom label/.style={anchor=south west,xshift=2pt,yshift=2pt,scale=0.80}
 ]
     % Rooted graph with real-valued vertex labels.
-    \node[font=\footnotesize\bfseries] at (1.65,2.90) {Rooted Labelled Graph $(G,p)$};
+    \node[font=\footnotesize\bfseries] at (1.65,2.90) {Rooted Labelled Graph $G(\xi,p)$};
 
     \node[vertex] (a) at (0.20,1.85) {};
     \node[root]   (r) at (1.55,1.45) {};
